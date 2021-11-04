@@ -2,7 +2,7 @@ import React, { createContext, useReducer} from 'react';
 import { CartReducer } from './CartReducer';
 
 const initialState = {
-    cartItems: [{nombre: 'Lechuga', Precio: '50', cantidad: 5}, {nombre: 'Pollo', Precio: '20', cantidad: 1}],
+    cartItems: [],
     itemCount: 0,
     total: 0.0,
     checkout: false

@@ -7,11 +7,24 @@ export default function CarroItem({producto}){
     const {nombre, Precio, cantidad} = producto;
     const {increase, decrease, removeProduct} = useContext(CartContext);
 
+    const onClickRemove=(event)=>{
+        event.preventDefault();
+        removeProduct(producto);
+    }
+    const onClickDecrease=(event)=>{
+        event.preventDefault();
+        decrease(producto);
+    }
+    const onClickIncrease=(event)=>{
+        event.preventDefault();
+        increase(producto);
+    }
+
     const showButton = (cant) =>{
         if(cant === 1){
-            return(<Button variant="dark">Remover</Button>)
+            return(<Button variant="dark" onClick={onClickRemove}>Remover</Button>)
         }else{
-            return(<Button variant="dark">Decrease</Button>)
+            return(<Button variant="dark" onClick={onClickDecrease}>Decrease</Button>)
         }
     }
 
@@ -34,7 +47,7 @@ export default function CarroItem({producto}){
             </Row>
             <Row>
                 <Col className="py-4 text-end">
-                <Button variant="light">Increase</Button> {showButton(cantidad)}
+                <Button variant="light" onClick={onClickIncrease}>Increase</Button> {showButton(cantidad)}
                 </Col>
             </Row>
         </div>

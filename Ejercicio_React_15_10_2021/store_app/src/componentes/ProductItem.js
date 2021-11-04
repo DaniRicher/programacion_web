@@ -6,6 +6,11 @@ import { CartContext } from '../contexts/CartContext'
 const ProductItem=(props)=>{
     const{nombre, Precio}=props.producto
     const{addProduct} = useContext(CartContext);
+
+    const onClickAdd=(event)=>{
+        event.preventDefault();
+        addProduct(props.producto);
+    }
     return(
         <div className="item">
             <Row className="">
@@ -20,11 +25,11 @@ const ProductItem=(props)=>{
             </Row>
             <Row>
                 <Col className="py-4 text-end">
-                <Button variant="light">Details</Button> <Button variant="dark">Add To Cart</Button>
+                <Button variant="light">Details</Button>
+                <Button variant="dark" onClick={onClickAdd}>Agregar al carrito</Button>
                 </Col>
             </Row>
         </div>
-        
     );
 }
 export default ProductItem;
