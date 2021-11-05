@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 
 export const CartReducer = (state, action) =>{
     const contarItems = (itemList) => {
@@ -42,25 +42,25 @@ switch(action.type){
         }
         return newState;
     case "REMOVE_ITEM":
-        const newCartItems=state.cartItems.filter();
+        //const newCartItems=state.cartItems.filter();
         return {
         };
     case "INCREASE":
-        const newStateCartItems = {
-            };
+        //const newStateCartItems = {
+        //    };
         const newState1 = {
             };
         return newState1;
     case "DECREASE":
-        const newcartItemsInDecrease = {
-                };
+        //const newcartItemsInDecrease = {
+        //        };
             return {
                 };
     case "CHECKOUT":
             return {
                 };
     case "CLEAR":
-
+        break;
     default:
         return state;
     }
