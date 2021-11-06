@@ -11,7 +11,6 @@ const ProductItem=(props)=>{
         event.preventDefault();
         addProduct(props.producto);
     }
-
     return(
         <div className="item">
             <Row className="">
@@ -31,7 +30,6 @@ const ProductItem=(props)=>{
                 </Col>
             </Row>
         </div>
-        
     );
 }
 export default ProductItem;

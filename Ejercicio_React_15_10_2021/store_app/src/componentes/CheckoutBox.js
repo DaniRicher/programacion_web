@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
+import {Col, Row} from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
 import { CartContext } from "../contexts/CartContext";
-import {Col, Row} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 
 export default function CheckoutBox(){
     const {clearCart, handleCheckout, itemCount, total} = useContext(CartContext);
