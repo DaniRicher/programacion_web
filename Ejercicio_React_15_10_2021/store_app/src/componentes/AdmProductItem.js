@@ -1,13 +1,21 @@
 import React from 'react'
 import {Col, Row} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
+import PlaceServices from '../services/PlaceServices';
 
 const AdmProductItem=(props)=>{
-    const{id, nombre, Precio}=props.producto
+    const{id, name, precio}=props.producto
 
     const onClickElim=(event)=>{
         event.preventDefault();
-        props.eliminar(id);
+        (async()=>{
+            try {
+                await PlaceServices.remove(id);
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+        //props.eliminar(id);
     }
 
     const onClickEdit=(event)=>{
@@ -20,12 +28,12 @@ const AdmProductItem=(props)=>{
         <div className="item">
             <Row className="">
                 <Col className="text-start">
-                <span>{nombre}</span>
+                <span>{name}</span>
                 </Col>
             </Row>
             <Row>
                 <Col className="text-start">
-                    <h4>${Precio}</h4>
+                    <h4>${precio}</h4>
                 </Col>
             </Row>
             <Row>

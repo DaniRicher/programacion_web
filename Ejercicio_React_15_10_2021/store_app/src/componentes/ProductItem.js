@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { CartContext } from '../contexts/CartContext'
 
 const ProductItem=(props)=>{
-    const{nombre, Precio}=props.producto
+    const{name, precio}=props.producto
     const{addProduct} = useContext(CartContext);
 
     const onClickAdd=(event)=>{
@@ -15,12 +15,12 @@ const ProductItem=(props)=>{
         <div className="item">
             <Row className="">
                 <Col className="text-start">
-                <span>{nombre}</span>
+                <span>{name}</span>
                 </Col>
             </Row>
             <Row>
                 <Col className="text-start">
-                    <h4>${Precio}</h4>
+                    <h4>${precio}</h4>
                 </Col>
             </Row>
             <Row>

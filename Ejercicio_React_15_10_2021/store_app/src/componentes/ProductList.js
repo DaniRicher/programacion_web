@@ -1,23 +1,35 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
+import PlaceServices from '../services/PlaceServices';
 import AdmProductItem from "./AdmProductItem";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ProductForm from "./ProductForm";
 import EditProdForm from "./EditProdForm";
 
+
 export default function ProductList(){
-    const itemsInitial = [
+
+    /*const itemsInitial = [
         {id:0,nombre:'Buffalo - Striploin',Precio:'39.11'},
         {id:1,nombre:'Bacardi Brezzer - Tropical',Precio:'257.92'}
-    ];
+    ];*/
 
-    const [items, setItems] = useState(itemsInitial);
-
+    const [items, setItems] = useState([]);
+    useEffect(()=>{
+        const getAllPlaces = ()=>{
+            PlaceServices.getAll().then(response =>{
+                setItems(response.data);
+            }).catch(e=> {
+                console.log(e);
+            })
+        }
+        getAllPlaces();
+    },[])
     const [showEditForm, setShowEditForm] = useState(false);
 
     const [auxItem, setAuxItem] = useState({});
 
-    const [idCount, setIdCount] = useState(itemsInitial.length);
+    const [idCount, setIdCount] = useState(items.length);
 
     const alEnviarForm = (itemFromForm) => {
         const idI = idCount;
