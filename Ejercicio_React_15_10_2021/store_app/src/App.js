@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import MisRoutes from './MisRutas';
 import Header from './componentes/Header';
 import CartContextProvider from './contexts/CartContext';
-import PlaceListTable from './componentes/PlaceListTable'
+//import PlaceListTable from './componentes/PlaceListTable'
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
       <Router>
         <Header/>
         <MisRoutes/>
-        <PlaceListTable/>
       </Router>
     </Container>
     </CartContextProvider>

@@ -9,10 +9,6 @@ import EditProdForm from "./EditProdForm";
 
 export default function ProductList(){
 
-    /*const itemsInitial = [
-        {id:0,nombre:'Buffalo - Striploin',Precio:'39.11'},
-        {id:1,nombre:'Bacardi Brezzer - Tropical',Precio:'257.92'}
-    ];*/
 
     const [items, setItems] = useState([]);
     useEffect(()=>{

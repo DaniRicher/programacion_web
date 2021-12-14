@@ -15,11 +15,19 @@ const AdmProductItem=(props)=>{
                 console.log(error);
             }
         })();
-        //props.eliminar(id);
+        props.eliminar(id);
     }
 
     const onClickEdit=(event)=>{
         event.preventDefault();
+        /*(async()=>{
+            try {
+                await PlaceServices.get(id);
+                console.log(PlaceServices.get(id));
+            } catch (error) {
+                console.log(error);
+            }
+        })();*/
         props.aux(props.producto);
         props.showEdit(true);
     }

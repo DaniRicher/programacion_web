@@ -27,7 +27,7 @@ export default function ProductForm(props){
                 console.log(error);
             }
         })();
-        //props.agregar(estadoForm);
+        props.agregar(estadoForm);
         //console.log(estadoForm);
         cambiarEstadoForm(estadoInicialForm);
     }
