@@ -4,7 +4,7 @@ import {Col, Row} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
 export default function CarroItem({producto}){
-    const {nombre, Precio, cantidad} = producto;
+    const {name, precio, cantidad} = producto;
     const {increase, decrease, removeProduct} = useContext(CartContext);
 
     const onClickRemove=(event)=>{
@@ -24,7 +24,7 @@ export default function CarroItem({producto}){
         if(cant === 1){
             return(<Button variant="dark" onClick={onClickRemove}>Remover</Button>)
         }else{
-            return(<Button variant="dark" onClick={onClickDecrease}>Decrease</Button>)
+            return(<Button variant="dark" onClick={onClickDecrease}>Decrementar</Button>)
         }
     }
 
@@ -32,12 +32,12 @@ export default function CarroItem({producto}){
         <div className="item">
             <Row className="">
                 <Col className="text-start">
-                <span>{nombre}</span>
+                <span>{name}</span>
                 </Col>
             </Row>
             <Row>
                 <Col className="text-start">
-                    <h4>${Precio}</h4>
+                    <h4>${precio}</h4>
                 </Col>
             </Row>
             <Row>
@@ -47,7 +47,7 @@ export default function CarroItem({producto}){
             </Row>
             <Row>
                 <Col className="py-4 text-end">
-                <Button variant="light" onClick={onClickIncrease}>Increase</Button> {showButton(cantidad)}
+                <Button variant="light" onClick={onClickIncrease}>Incrementar</Button> {showButton(cantidad)}
                 </Col>
             </Row>
         </div>

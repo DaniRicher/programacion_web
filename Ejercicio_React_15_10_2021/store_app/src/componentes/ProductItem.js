@@ -25,8 +25,8 @@ const ProductItem=(props)=>{
             </Row>
             <Row>
                 <Col className="py-4 text-end">
-                <Button variant="light">Details</Button> 
-                <Button variant="dark" onClick={onClickAdd}>Add To Cart</Button>
+                {/*<Button variant="light">Details</Button>*/} 
+                <Button variant="dark" onClick={onClickAdd}>Agregar al carrito</Button>
                 </Col>
             </Row>
         </div>

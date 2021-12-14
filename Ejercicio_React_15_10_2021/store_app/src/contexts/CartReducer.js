@@ -5,7 +5,7 @@ const contarItems = (itemList) => {
 }
 
 const sumaTotal = (itemList) => {
-    const acumulador = itemList.reduce((acum, item) => acum + item.Precio * item.cantidad, 0.0) ;
+    const acumulador = itemList.reduce((acum, item) => acum + item.precio * item.cantidad, 0.0) ;
     return acumulador;
 }
 
