@@ -9,7 +9,7 @@ const Header =()=>{
     return(
         <Row>
             <Col className="col py5 text-center border">
-                <Link to='/'>Store</Link>
+                <Link to='/store'>Store</Link>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <Link to='/about'>About</Link>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -20,6 +20,8 @@ const Header =()=>{
                 <span>({itemCount})</span>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <Link to='/admin_product'>Administrar Productos</Link>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <Link to='/login'>Login</Link>
             </Col>
         </Row>
     );

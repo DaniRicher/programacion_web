@@ -8,10 +8,10 @@ import AdminProduct from './pages/AdminProduct';
 export default function MisRoutes(){ 
     return( 
         <Switch> 
-            <Route exact path='/' component={Store}/> 
+            <Route path='/store' component={Store}/>
             <Route path='/cart' component={Cart}/>
             <Route path='/about' component={About}/>
-            <Route path='/admin_product' component={AdminProduct}/>
+            {/*<Route path='/admin_product' component={AdminProduct}/>}*/}
         </Switch>
     );
 }
