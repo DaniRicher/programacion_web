@@ -2,15 +2,17 @@ import './App.css';
 import Container from 'react-bootstrap/Container'; 
 import React from 'react';
 import {BrowserRouter as Router,Switch} from 'react-router-dom';
-import MisRoutes from './MisRutas';
+//import MisRoutes from './MisRutas';
 import Header from './componentes/Header';
 import CartContextProvider from './contexts/CartContext';
 import PublicRoute from './routes/PublicRoute';
 import Login from './pages/Login';
+import Store from './pages/Store';
 import PrivateRoute from './routes/PrivateRoute';
 import AdminProduct from './pages/AdminProduct';
 import {AuthContext} from './contexts/AuthContext'
-//import PlaceListTable from './componentes/PlaceListTable'
+import About from './pages/About';
+import Cart from './pages/Cart';
 
 function App() {
 
@@ -30,13 +32,26 @@ function App() {
             <Login/>
           </PublicRoute>
 
-          {/*<PublicRoute 
-          path="/login"
+          <PublicRoute 
+          path="/store"
           isAuthenticated={isAuth}
           >
-            <MisRoutes/>
-          </PublicRoute>*/}
+            <Store/>
+          </PublicRoute>
+          <PublicRoute 
+          path="/about"
+          isAuthenticated={isAuth}
+          >
+            <About/>
+          </PublicRoute>
           
+          <PublicRoute 
+          path="/cart"
+          isAuthenticated={isAuth}
+          >
+            <Cart/>
+          </PublicRoute>
+
           <PrivateRoute
           path="/"
           isAuthenticated={isAuth}
