@@ -17,7 +17,7 @@ const Login = ()=>{
         ev.preventDefault();
         AuthServices.login(formData.email,formData.password).then(data =>{
             login(data);
-            history.push("/admin_product");
+            history.push("/");
         }, error =>{
             console.log("Usuario y contraseña incorrectos")
         })
